@@ -1,7 +1,8 @@
-my_variable = 21
-use_synth :piano
-87.times do
-  play my_variable
-  my_variable = my_variable + 1
-  sleep 0.25
+
+my_variable = 21     <------ What I want the program to start from
+use_synth :piano     <------ What type of sound I want it to play
+87.times do          <------ Playing notes A0 through C108
+  play my_variable   <------ Plays the variable I set it up with
+  my_variable = my_variable + 1     <------ Adds 1 to the variable each time it's played
+  sleep 0.25         <------ Rests for .25 each time
 end
