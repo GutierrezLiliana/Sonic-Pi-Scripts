@@ -1,0 +1,131 @@
+use_bpm 120
+use_synth :piano
+x=0
+1.times do
+  play :eb, sustain: 3.5
+  sleep 3.5
+  play :d
+  sleep 0.5
+end
+
+1.times do
+  play :d5
+  sleep 0.33333333333333333
+  play :e5
+  sleep 0.33333333333333333
+  play :d5
+  sleep 0.33333333333333333
+  play :b
+  sleep 0.33333333333333333
+  play :g
+  sleep 0.33333333333333333
+  play :b
+  sleep 0.33333333333333333
+  play :d5
+  sleep 0.33333333333333333
+  play :e5
+  sleep 0.33333333333333333
+  play :d5
+  sleep 0.33333333333333333
+  play :b
+  sleep 1
+end
+
+1.times do
+  play :g5
+  sleep 0.33333333333333333
+  play :fs5
+  sleep 0.33333333333333333
+  play :g5
+  sleep 0.33333333333333333
+  play :e5
+  sleep 0.33333333333333333
+  play :d5
+  sleep 0.33333333333333333
+  play :e5
+  sleep 0.33333333333333333
+  play :d5
+  sleep 0.33333333333333333
+  play :b
+  sleep 0.33333333333333333
+  play :g
+  sleep 0.33333333333333333
+  play :b
+  sleep 0.5
+  play :g5
+  sleep 0.5
+end
+
+live_loop :sponge do
+  with_fx :reverb do
+    1.times do
+      play :eb, sustain: 3.5, amp: 2
+      sleep 3.5
+      play :d
+      sleep 0.5
+    end
+    
+    1.times do
+      play :d5, amp: 2
+      sleep 0.33333333333333333
+      play :e5, amp: 2
+      sleep 0.33333333333333333
+      play :d5, amp: 2
+      sleep 0.33333333333333333
+      play :b, amp: 2
+      sleep 0.33333333333333333
+      play :g, amp: 2
+      sleep 0.33333333333333333
+      play :b, amp: 2
+      sleep 0.33333333333333333
+      play :d5, amp: 2
+      sleep 0.33333333333333333
+      play :e5, amp: 2
+      sleep 0.33333333333333333
+      play :d5, amp: 2
+      sleep 0.33333333333333333
+      play :b, amp: 2
+      sleep 1
+    end
+    1.times do
+      play :g5, amp: 2
+      sleep 0.33333333333333333
+      play :fs5, amp: 2
+      sleep 0.33333333333333333
+      play :g5, amp: 2
+      sleep 0.33333333333333333
+      play :e5, amp: 2
+      sleep 0.33333333333333333
+      play :d5, amp: 2
+      sleep 0.33333333333333333
+      play :e5, amp: 2
+      sleep 0.33333333333333333
+      play :d5, amp: 2
+      sleep 0.33333333333333333
+      play :b, amp: 2
+      sleep 0.33333333333333333
+      play :g, amp: 2
+      sleep 0.33333333333333333
+      play :b, amp: 2
+      sleep 0.5
+      play :g5, amp: 2
+      sleep 0.5
+    end
+  end
+end
+
+
+10.times do
+  sample :drum_bass_soft ,amp:x
+  sleep 2
+  sample :drum_bass_soft , amp:x
+  sleep 2
+  x = x + 1
+end
+
+live_loop :drum do
+  sample :drum_bass_soft, amp:11
+  sleep 2
+  sample :drum_bass_soft, amp:11
+  sleep 2
+end
