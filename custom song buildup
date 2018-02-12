@@ -1,12 +1,20 @@
 use_bpm 120
 use_synth :piano
 x=0
+y= :drum_bass_soft
+z= 14
+#lines 1-5 is showing the beats per minute, the sound I am using,
+#and my variables to what their value are like x and z are for where
+#it starts from and y is the sound I want it to play.
 1.times do
   play :eb, sustain: 3.5
   sleep 3.5
   play :d
   sleep 0.5
 end
+#lines 9-14 is about what notes I want to be played, how long I
+#want it to be played for and how long I want it to rest for
+#with it ending at the end of the times played
 
 1.times do
   play :d5
@@ -30,7 +38,8 @@ end
   play :b
   sleep 1
 end
-
+#Lines 17-38 is showing what notes I want played and how long it should rest for
+#with it ending at the end of the times played
 1.times do
   play :g5
   sleep 0.33333333333333333
@@ -55,7 +64,8 @@ end
   play :g5
   sleep 0.5
 end
-
+#Lines 40-63 is showing what notes I want played and how long it should rest for
+#with it ending at the end of the times played
 live_loop :sponge do
   with_fx :reverb do
     1.times do
@@ -64,7 +74,9 @@ live_loop :sponge do
       play :d
       sleep 0.5
     end
-    
+    #lines 66-73 shows what the name of this loop is and what sound it should play
+    #with how many times it plays, what notes are being played, how long it should
+    #hold for, how loud I want it, and how long its resting for
     1.times do
       play :d5, amp: 2
       sleep 0.33333333333333333
@@ -113,19 +125,23 @@ live_loop :sponge do
     end
   end
 end
-
-
+#Lines 77-124 is showing what notes I want played, how long it should rest for
+# and how loud I want it to be played with it ending at the end
 10.times do
-  sample :drum_bass_soft ,amp:x
+  sample y ,amp:x
   sleep 2
-  sample :drum_bass_soft , amp:x
+  sample y , amp:x
   sleep 2
   x = x + 1
 end
-
+#Lines 130-136 is showing how many times my variables are playing for
+#also with how loud I want it to be and sleep for
+#lastly line 135 is showing the current x value being added by one each time to make it sound louder
 live_loop :drum do
-  sample :drum_bass_soft, amp:11
+  sample y, amp:z
   sleep 2
-  sample :drum_bass_soft, amp:11
+  sample y, amp:z
   sleep 2
 end
+#lines 140-145 shows the last loop that plays once my 10.times ends
+#this shows that I want the y variable to be played, and with z it makes my sound louder and I want it to rest for 2 seconds
