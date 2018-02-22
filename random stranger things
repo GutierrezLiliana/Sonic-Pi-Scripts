@@ -25,7 +25,7 @@ end
 
 live_loop :strategy2 do
   # assign a value to 'b' that will be used as the index value
-  b = rand_i (7)
+  b = rand_i (8)
   print b
   play notes[b]
   sleep 0.5
