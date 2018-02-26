@@ -12,7 +12,7 @@ play :eb, sustain: 3.5
 sleep 3.5
 play :d
 sleep 0.5
-#plays 9 times to play the notes in function sponge
+
 9.times do
   play sponge[i]
   sleep 0.333333
@@ -21,7 +21,7 @@ end
 play :b
 sleep 1
 i=0
-#plays ten times to play the notes in function bob
+
 10.times do
   play bob[i]
   sleep 0.333333
@@ -34,7 +34,9 @@ sleep 0.5
 
 
 
-#second melody with drums starts
+#melody ends
+
+#melody with drums starts
 live_loop :sponge do
   with_fx :reverb do
     
@@ -95,22 +97,22 @@ live_loop :sponge do
   end
 end
 
-# the drum buildup to go with the second melody
+
 live_loop :spongetwo do
-  sample y ,amp: 1
+  sample y ,amp: x
   sleep 2
-  sample y , amp: 1
+  sample y , amp: x
   sleep 2
   x = x + 1
 end
 
 live_loop :drum do
-  sample y, amp: 1
+  sample y, amp: x
   sleep 2
-  sample y, amp: 1
+  sample y, amp: x
   sleep 2
 end
-#plays the random sound to match playing function bob but playing the notes randomly
+
 live_loop :strategy2 do
   # assign a value to 'b' that will be used as the index value
   b = rand_i (10)
