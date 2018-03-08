@@ -4,7 +4,7 @@
 
 use_bpm 120
 use_synth :piano
-
+#plays melody without drums
 1.times do
   play :eb, sustain: 3.5
   sleep 3.5
@@ -59,7 +59,7 @@ end
   play :g5
   sleep 0.5
 end
-
+#plays melody with drums on the bottom
 live_loop :sponge do
   with_fx :reverb do
     1.times do
