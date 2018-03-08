@@ -11,7 +11,7 @@ use_synth_defaults cutoff: 80
 kanye_vocals = "C:/Users/liliana_gutierrez/Downloads/sonic_pi_challenge_7_custom_samples/sonic_pi_challenge_7_custom_samples/love_lockdown.wav"
 song_kanye = "C:/Users/liliana_gutierrez/my_samples"
 sample_used = :bd_808
-
+#plays the define in the live loop in the bottoms and sustains for certain notes
 define :foo do
   play :cs2
   sleep 0.5
@@ -24,7 +24,7 @@ define :foo do
   play :cs1, sustain: 1
   sleep 2
 end
-
+#plays the song defined on top and in the live loop
 define :vocals do
   sample kanye_vocals
   sleep 4
@@ -42,12 +42,12 @@ define :drum do
   sample sample_used, amp: 2
   sleep 2
 end
+#plays a drum sound while the music is playing
 live_loop :drum_beat do
   drum
 end
 
-# use a variable so that each time the live_loop repeats itself the volume of the synth increases in amplitude
-#(start the amplitude at 0 so it is inaudible to start!)
+# live loops play the defined functions on top
 live_loop :synth_sound do
   foo
 end
