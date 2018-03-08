@@ -1,6 +1,6 @@
 use_bpm 120
 use_synth :piano
-i=0
+i=0                                       #variables and notes that are used in this file
 x=0
 y= :drum_bass_soft
 z= 14
@@ -12,7 +12,7 @@ play :eb, sustain: 3.5
 sleep 3.5
 play :d
 sleep 0.5
-
+#plays variable i and builds it up to one each time then resets after it ends the function 
 9.times do
   play sponge[i]
   sleep 0.333333
@@ -97,7 +97,7 @@ live_loop :sponge do
   end
 end
 
-
+#live loops that play variable x and keeps adding one each time it runs through the liveloop
 live_loop :spongetwo do
   sample y ,amp: 1
   sleep 2
