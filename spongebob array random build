@@ -1,6 +1,6 @@
 use_bpm 120
 use_synth :piano
-i=0
+i=0                                    #all the variables and notes that are playing in this file
 x=0
 y= :drum_bass_soft
 z= 14
@@ -97,7 +97,7 @@ live_loop :sponge do
   end
 end
 
-
+#live loops that are playing and using the drum_bass_soft sound and keep on adding it by one each time in the live loop
 live_loop :spongetwo do
   sample y ,amp: x
   sleep 2
@@ -112,7 +112,7 @@ live_loop :drum do
   sample y, amp: x
   sleep 2
 end
-
+#chooses random notes within function bob
 live_loop :strategy2 do
   # assign a value to 'b' that will be used as the index value
   b = rand_i (10)
